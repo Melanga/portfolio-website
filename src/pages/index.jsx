@@ -1,4 +1,5 @@
 import React from "react";
+import HeroSection from "../components/HeroSection";
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
 
@@ -17,6 +18,7 @@ class Home extends React.Component {
       <React.Fragment>
         <SideNavBar onToggle={this.toggleIsOpen} isOpen={this.state.isOpen} />
         <NavBar onToggle={this.toggleIsOpen} />
+        <HeroSection />
       </React.Fragment>
     );
   }
