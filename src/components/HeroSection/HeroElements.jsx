@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
+//import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 import { SiGithub, SiTwitter, SiLinkedin } from "react-icons/si";
 
 export const HeroContainer = styled.div`

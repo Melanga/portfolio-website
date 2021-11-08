@@ -1,4 +1,8 @@
 import React from "react";
+import AboutSection from "../components/AboutSection";
+import { aboutData } from "../components/AboutSection/Data";
+import EducationSection from "../components/EducationSection";
+import { educationData } from "../components/EducationSection/Data";
 import HeroSection from "../components/HeroSection";
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
@@ -19,6 +23,8 @@ class Home extends React.Component {
         <SideNavBar onToggle={this.toggleIsOpen} isOpen={this.state.isOpen} />
         <NavBar onToggle={this.toggleIsOpen} />
         <HeroSection />
+        <AboutSection {...aboutData} />
+        <EducationSection {...educationData} />
       </React.Fragment>
     );
   }
