@@ -1,8 +1,8 @@
 import React from "react";
-import AboutSection from "../components/AboutSection";
-import { aboutData } from "../components/AboutSection/Data";
-import EducationSection from "../components/EducationSection";
-import { educationData } from "../components/EducationSection/Data";
+import AboutSection from "../components/Sections/AboutSection";
+import { aboutData } from "../components/Sections/AboutSection/Data";
+import EducationSection from "../components/Sections/EducationSection";
+import { educationData } from "../components/Sections/EducationSection/Data";
 import HeroSection from "../components/HeroSection";
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";

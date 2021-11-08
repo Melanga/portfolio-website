@@ -19,14 +19,13 @@ class EducationTimeline extends React.Component {
         cardTitle: "St. Mary's College, Kegalle",
         cardSubtitle: "I have done my O/L  and A/L in Physical Sciences",
         cardDetailedText:
-          "Men of the British Expeditionary Force (BEF) wade out to..",
+          "8A passes and C for English Literature\nAdvanced Level:\n Physics - B | Chemistry - C | Combined Maths - C.",
       },
       {
         title: "Jan 2023",
         cardTitle: "Uva Wellassa University of Sri Lanka",
         cardSubtitle: "Bachelor of Industrial Information Technology",
-        cardDetailedText:
-          "Men of the British Expeditionary Force (BEF) wade out to..",
+        cardDetailedText: "Currently Undergraduate",
       },
     ];
 

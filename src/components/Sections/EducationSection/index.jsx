@@ -1,25 +1,25 @@
 import React from "react";
 import {
-  EducationContainer,
-  EducationWrapper,
-  EducationRow,
+  SectionContainer,
+  SectionWrapper,
+  SectionRow,
   Column1,
   Column2,
   TextWrapper,
   TopLine,
   Heading,
-  EducationTimelineWrapper,
   ImgWrap,
   Img,
-} from "./EducationSectionElements";
+} from "../SectionElements";
+import { EducationTimelineWrapper } from "./EducationSectionElements";
 import EducationTimeline from "./EducationTimeline";
 class EducationSection extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <EducationContainer lightBg={this.props.lightBg} id={this.props.id}>
-          <EducationWrapper>
-            <EducationRow imgStart={this.props.imgStart}>
+        <SectionContainer lightBg={this.props.lightBg} id={this.props.id}>
+          <SectionWrapper>
+            <SectionRow imgStart={this.props.imgStart}>
               <Column1>
                 <TextWrapper>
                   <TopLine>{this.props.topLine}</TopLine>
@@ -39,9 +39,9 @@ class EducationSection extends React.Component {
                   <Img src={this.props.img} alt={this.props.alt} />
                 </ImgWrap>
               </Column2>
-            </EducationRow>
-          </EducationWrapper>
-        </EducationContainer>
+            </SectionRow>
+          </SectionWrapper>
+        </SectionContainer>
       </React.Fragment>
     );
   }

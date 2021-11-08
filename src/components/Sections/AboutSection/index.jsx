@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  AboutContainer,
-  AboutWrapper,
-  AboutRow,
+  SectionContainer,
+  SectionWrapper,
+  SectionRow,
   Column1,
   Column2,
   TextWrapper,
@@ -11,15 +11,15 @@ import {
   Subtitle,
   ImgWrap,
   Img,
-} from "./AboutSectionElements";
+} from "../SectionElements";
 
 class AboutSection extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <AboutContainer lightBg={this.props.lightBg} id={this.props.id}>
-          <AboutWrapper>
-            <AboutRow imgStart={this.props.imgStart}>
+        <SectionContainer lightBg={this.props.lightBg} id={this.props.id}>
+          <SectionWrapper>
+            <SectionRow imgStart={this.props.imgStart}>
               <Column1>
                 <TextWrapper>
                   <TopLine>{this.props.topLine}</TopLine>
@@ -36,9 +36,9 @@ class AboutSection extends React.Component {
                   <Img src={this.props.img} alt={this.props.alt} />
                 </ImgWrap>
               </Column2>
-            </AboutRow>
-          </AboutWrapper>
-        </AboutContainer>
+            </SectionRow>
+          </SectionWrapper>
+        </SectionContainer>
       </React.Fragment>
     );
   }

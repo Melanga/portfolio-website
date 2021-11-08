@@ -1,15 +1,15 @@
-import img1 from '../../images/svg-education.svg';
+import img1 from '../../../images/svg-about.svg';
 
-export const educationData = {
-    id:'education',
-    lightBg:true,
-    lightText:false,
-    lightTextDesc:false,
+export const aboutData = {
+    id:'about',
+    lightBg:false,
+    lightText:true,
+    lightTextDesc:true,
     topLine:'Hello There',
-    headLine:'Education',
+    headLine:'About Me',
     description:'I\'m Melanga Bhathiya and I am currently an undergraduate at the Uva Wellassa University of Sri Lanka pursuing my special degree in Industrial Information Technology(BIIT).\n Machine Learning | Big Data Analysis | Web Designing | Mobile App Development are my interesting areas of study.',
-    imgStart:true,
+    imgStart:false,
     img: img1,
     alt: 'car',
-    darkText:true,
+    darkText:false,
 }
