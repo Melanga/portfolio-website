@@ -6,6 +6,8 @@ import { educationData } from "../components/Sections/EducationSection/Data";
 import HeroSection from "../components/HeroSection";
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
+import TechnologiesSection from "../components/Sections/TechnologiesSection";
+import { technologiesData } from "../components/Sections/TechnologiesSection/Data";
 
 class Home extends React.Component {
   state = {
@@ -25,6 +27,7 @@ class Home extends React.Component {
         <HeroSection />
         <AboutSection {...aboutData} />
         <EducationSection {...educationData} />
+        <TechnologiesSection {...technologiesData} />
       </React.Fragment>
     );
   }
