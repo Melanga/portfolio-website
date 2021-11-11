@@ -1,7 +1,7 @@
 import img1 from '../../../images/svg-about.svg';
 
 export const aboutData = {
-    id:'about',
+    id:'about_me',
     lightBg:false,
     lightText:true,
     lightTextDesc:true,
