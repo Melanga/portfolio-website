@@ -51,6 +51,10 @@ export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
+
+  @media screen and (max-width: 480px) {
+    padding-bottom: 40px;
+  }
 `;
 
 export const TopLine = styled.p`

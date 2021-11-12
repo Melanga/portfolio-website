@@ -16,4 +16,17 @@ export const EducationTimelineWrapper = styled.div`
   @media screen and (max-width: 370px) {
     width: 300px;
   }
+  @media screen and (max-width: 320px) {
+    width: 280px;
+  }
+`;
+
+export const EducationTextWrapper = styled.div`
+  max-width: 540px;
+  padding-top: 0;
+  padding-bottom: 60px;
+
+  @media screen and (max-width: 480px) {
+    padding-bottom: 0px;
+  }
 `;

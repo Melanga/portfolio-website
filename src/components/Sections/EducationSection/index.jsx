@@ -5,13 +5,15 @@ import {
   SectionRow,
   Column1,
   Column2,
-  TextWrapper,
   TopLine,
   Heading,
   ImgWrap,
   Img,
 } from "../SectionElements";
-import { EducationTimelineWrapper } from "./EducationSectionElements";
+import {
+  EducationTimelineWrapper,
+  EducationTextWrapper,
+} from "./EducationSectionElements";
 import EducationTimeline from "./EducationTimeline";
 class EducationSection extends React.Component {
   render() {
@@ -21,7 +23,7 @@ class EducationSection extends React.Component {
           <SectionWrapper>
             <SectionRow imgStart={this.props.imgStart}>
               <Column1>
-                <TextWrapper>
+                <EducationTextWrapper>
                   <TopLine>{this.props.topLine}</TopLine>
                   <Heading lightText={this.props.lightText}>
                     {this.props.headLine}
@@ -29,7 +31,7 @@ class EducationSection extends React.Component {
                   {/* <Subtitle darkText={this.props.darkText}>
                     {this.props.description}
                   </Subtitle> */}
-                </TextWrapper>
+                </EducationTextWrapper>
                 <EducationTimelineWrapper>
                   <EducationTimeline vertical={false} />
                 </EducationTimelineWrapper>
