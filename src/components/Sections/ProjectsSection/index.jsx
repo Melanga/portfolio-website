@@ -1,14 +1,11 @@
 import React from "react";
-import Icon1 from "../../../images/svg-1.svg";
+import ProjectCard from "./projectCard";
+import { projectData1, projectData2, projectData3 } from "./ProjectsData";
 
 import {
   ProjectsContainer,
   ProjectsTitle,
   ProjectsWrapper,
-  ProjectCard,
-  ProjectIcon,
-  ProjectHeading,
-  ProjectDescription,
 } from "./ProjectsSectionElements";
 
 class ProjectsSection extends React.Component {
@@ -18,27 +15,9 @@ class ProjectsSection extends React.Component {
         <ProjectsContainer id="projects">
           <ProjectsTitle>My Projects</ProjectsTitle>
           <ProjectsWrapper>
-            <ProjectCard>
-              <ProjectIcon src={Icon1}></ProjectIcon>
-              <ProjectHeading>example project</ProjectHeading>
-              <ProjectDescription>
-                This is an example project details of my latests projects
-              </ProjectDescription>
-            </ProjectCard>
-            <ProjectCard>
-              <ProjectIcon src={Icon1}></ProjectIcon>
-              <ProjectHeading>example project</ProjectHeading>
-              <ProjectDescription>
-                This is an example project details of my latests projects
-              </ProjectDescription>
-            </ProjectCard>
-            <ProjectCard>
-              <ProjectIcon src={Icon1}></ProjectIcon>
-              <ProjectHeading>example project</ProjectHeading>
-              <ProjectDescription>
-                This is an example project details of my latests projects
-              </ProjectDescription>
-            </ProjectCard>
+            <ProjectCard {...projectData1} />
+            <ProjectCard {...projectData2} />
+            <ProjectCard {...projectData3} />
           </ProjectsWrapper>
         </ProjectsContainer>
       </React.Fragment>

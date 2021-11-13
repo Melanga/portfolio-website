@@ -16,7 +16,7 @@ export const ProjectsContainer = styled.div`
   }
 `;
 export const ProjectsWrapper = styled.div`
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -32,9 +32,10 @@ export const ProjectsWrapper = styled.div`
     padding: 0 20px;
   }
 `;
-export const ProjectCard = styled.div`
+export const ProjectCardWrapper = styled.div`
   background: #fff;
   display: flex;
+  height: 340px;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
@@ -62,6 +63,7 @@ export const ProjectsTitle = styled.div`
   }
 `;
 export const ProjectHeading = styled.h2`
+  text-align: center;
   font-size: 1rem;
   margin-bottom: 10px;
 `;
