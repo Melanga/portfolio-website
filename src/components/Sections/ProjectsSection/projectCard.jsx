@@ -1,5 +1,4 @@
 import React from "react";
-import Icon1 from "../../../images/svg-1.svg";
 
 import {
   ProjectCardWrapper,
