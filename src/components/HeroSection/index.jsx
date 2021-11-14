@@ -1,4 +1,5 @@
 import React from "react";
+import { useSpring, animated, config } from "react-spring";
 //import { Button } from "../ButtonElement";
 import {
   HeroContainer,
@@ -13,24 +14,28 @@ import {
   LinkedinIcon,
 } from "./HeroElements";
 import Video from "../../video/video.mp4";
+const HeroSection = () => {
+  const propsHeader = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 400,
+    config: config.molasses,
+  });
 
-class HeroSection extends React.Component {
-  state = {
-    hover: false,
-  };
+  const propsButtons = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    delay: 750,
+    config: config.molasses,
+  });
 
-  toggleHover = () => {
-    let toggledHover = !this.state.hover;
-    this.setState({ hover: toggledHover });
-  };
-
-  render() {
-    return (
-      <HeroContainer>
-        <HeroBg>
-          <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
-        </HeroBg>
-        <HeroContent>
+  return (
+    <HeroContainer>
+      <HeroBg>
+        <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
+      </HeroBg>
+      <HeroContent>
+        <animated.div style={propsHeader}>
           <HeroH1>Melanga Dissanayake</HeroH1>
           <HeroP>
             I'm Melanga Bhathiya and I am currently an undergraduate at the Uva
@@ -39,6 +44,8 @@ class HeroSection extends React.Component {
             Machine Learning | Big Data Analysis | Web Designing | Mobile App
             Development are my interesting areas of study.
           </HeroP>
+        </animated.div>
+        <animated.div style={propsButtons}>
           <HeroBtnWrapper>
             {/* <Button
               primary="true"
@@ -59,10 +66,10 @@ class HeroSection extends React.Component {
               <LinkedinIcon />
             </a>
           </HeroBtnWrapper>
-        </HeroContent>
-      </HeroContainer>
-    );
-  }
-}
+        </animated.div>
+      </HeroContent>
+    </HeroContainer>
+  );
+};
 
 export default HeroSection;

@@ -7,16 +7,14 @@ import {
   ProjectDescription,
 } from "./ProjectsSectionElements";
 
-class ProjectCard extends React.Component {
-  render() {
-    return (
-      <ProjectCardWrapper id={this.props.img}>
-        <ProjectIcon src={this.props.img} alt={this.props.alt}></ProjectIcon>
-        <ProjectHeading>{this.props.heading}</ProjectHeading>
-        <ProjectDescription>{this.props.description}</ProjectDescription>
-      </ProjectCardWrapper>
-    );
-  }
-}
+const ProjectCard = ({ img, alt, heading, description }) => {
+  return (
+    <ProjectCardWrapper id={img}>
+      <ProjectIcon src={img} alt={alt}></ProjectIcon>
+      <ProjectHeading>{heading}</ProjectHeading>
+      <ProjectDescription>{description}</ProjectDescription>
+    </ProjectCardWrapper>
+  );
+};
 
 export default ProjectCard;
