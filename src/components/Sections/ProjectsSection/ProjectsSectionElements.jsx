@@ -42,12 +42,12 @@ export const ProjectCardWrapper = styled.div`
   max-height: 400px;
   padding: 30px;
   box-shadow: 1px 4px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
+  /* transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-  }
+  } */
   @media screen and (max-width: 480px) {
     height: 340px;
   }
