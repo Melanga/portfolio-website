@@ -25,7 +25,7 @@ const HeroSection = () => {
   const propsButtons = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
-    delay: 750,
+    delay: 575,
     config: config.molasses,
   });
 
