@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
-import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
 export const SideNavBarContainer = styled.aside`
@@ -69,7 +68,7 @@ export const SideNavBtnWrap = styled.div`
   justify-content: center;
 `;
 
-export const SideNavBtn = styled(LinkR)`
+export const SideNavBtn = styled(LinkS)`
   border-radius: 50px;
   color: #000;
   background: #01bf71;

@@ -37,7 +37,7 @@ class NavBar extends React.Component {
               </NavItem>
             </NavMenu>
             <NavBtn>
-              <NavBtnLink to="/contact">Contact Me</NavBtnLink>
+              <NavBtnLink to="footer">Contact Me</NavBtnLink>
             </NavBtn>
           </NavBarContainer>
         </Nav>

@@ -35,7 +35,9 @@ class SideNavBar extends React.Component {
             </SideNavBarLink>
           </SideNavBarMenu>
           <SideNavBtnWrap>
-            <SideNavBtn to="/contact_me">Contact Me</SideNavBtn>
+            <SideNavBtn to="footer" onClick={onToggle}>
+              Contact Me
+            </SideNavBtn>
           </SideNavBtnWrap>
         </SideNavBarWrapper>
       </SideNavBarContainer>
