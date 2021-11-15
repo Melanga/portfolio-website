@@ -1,5 +1,6 @@
 import React from "react";
 import { useSpring, animated, config } from "react-spring";
+import { useInView } from "react-intersection-observer";
 //import { Button } from "../ButtonElement";
 import {
   HeroContainer,
@@ -15,22 +16,22 @@ import {
 } from "./HeroElements";
 import Video from "../../video/video.mp4";
 const HeroSection = () => {
+  const { ref, inView } = useInView({ threshold: 0.3 });
+
   const propsHeader = useSpring({
-    to: { opacity: 1 },
-    from: { opacity: 0 },
+    opacity: inView ? 1 : 0,
     delay: 400,
     config: config.molasses,
   });
 
   const propsButtons = useSpring({
-    to: { opacity: 1 },
-    from: { opacity: 0 },
+    opacity: inView ? 1 : 0,
     delay: 575,
     config: config.molasses,
   });
 
   return (
-    <HeroContainer>
+    <HeroContainer ref={ref}>
       <HeroBg>
         <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
       </HeroBg>
