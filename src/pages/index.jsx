@@ -9,6 +9,7 @@ import SideNavBar from "../components/SideNavBar";
 import TechnologiesSection from "../components/Sections/TechnologiesSection";
 import { technologiesData } from "../components/Sections/TechnologiesSection/Data";
 import ProjectsSection from "../components/Sections/ProjectsSection";
+import Footer from "../components/Footer";
 
 class Home extends React.Component {
   state = {
@@ -29,7 +30,8 @@ class Home extends React.Component {
         <AboutSection {...aboutData} />
         <EducationSection {...educationData} />
         <TechnologiesSection {...technologiesData} />
-        <ProjectsSection></ProjectsSection>
+        <ProjectsSection />
+        <Footer />
       </React.Fragment>
     );
   }

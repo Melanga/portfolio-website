@@ -76,7 +76,6 @@ const AboutSection = ({
               </animated.div>
             </TextWrapper>
           </Column1>
-
           <Column2>
             <animated.div style={contentImgProps}>
               <ImgWrap>
