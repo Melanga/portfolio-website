@@ -11,6 +11,7 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavBarElements";
+import { animateScroll } from "react-scroll";
 
 const NavBar = ({ toggleIsOpen }) => {
   const [navScrolled, setNavScrolled] = useState(false);
@@ -27,11 +28,17 @@ const NavBar = ({ toggleIsOpen }) => {
     window.addEventListener("scroll", onNavScrolled);
   }, []);
 
+  const scrollToHome = () => {
+    animateScroll.scrollToTop();
+  };
+
   return (
     <React.Fragment>
       <Nav navScrolled={navScrolled}>
         <NavBarContainer>
-          <NavLogo to="/">Portfolio</NavLogo>
+          <NavLogo to="/" onClick={scrollToHome}>
+            Portfolio
+          </NavLogo>
           <MobileIcon onClick={toggleIsOpen}>
             <FaBars />
           </MobileIcon>
