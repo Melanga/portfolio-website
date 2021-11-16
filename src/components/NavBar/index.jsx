@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import {
   Nav,
@@ -12,38 +12,50 @@ import {
   NavBtnLink,
 } from "./NavBarElements";
 
-class NavBar extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Nav>
-          <NavBarContainer>
-            <NavLogo to="/">Portfolio</NavLogo>
-            <MobileIcon onClick={this.props.onToggle}>
-              <FaBars />
-            </MobileIcon>
-            <NavMenu>
-              <NavItem>
-                <NavLinks to="about_me">About Me</NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks to="education">Education</NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks to="projects">Projects</NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks to="technologies">Technologies</NavLinks>
-              </NavItem>
-            </NavMenu>
-            <NavBtn>
-              <NavBtnLink to="footer">Contact Me</NavBtnLink>
-            </NavBtn>
-          </NavBarContainer>
-        </Nav>
-      </React.Fragment>
-    );
-  }
-}
+const NavBar = ({ toggleIsOpen }) => {
+  const [navScrolled, setNavScrolled] = useState(false);
+
+  const onNavScrolled = () => {
+    if (window.scrollY >= 80) {
+      setNavScrolled(true);
+    } else {
+      setNavScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", onNavScrolled);
+  }, []);
+
+  return (
+    <React.Fragment>
+      <Nav navScrolled={navScrolled}>
+        <NavBarContainer>
+          <NavLogo to="/">Portfolio</NavLogo>
+          <MobileIcon onClick={toggleIsOpen}>
+            <FaBars />
+          </MobileIcon>
+          <NavMenu>
+            <NavItem>
+              <NavLinks to="about_me">About Me</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="education">Education</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="projects">Projects</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="technologies">Technologies</NavLinks>
+            </NavItem>
+          </NavMenu>
+          <NavBtn>
+            <NavBtnLink to="footer">Contact Me</NavBtnLink>
+          </NavBtn>
+        </NavBarContainer>
+      </Nav>
+    </React.Fragment>
+  );
+};
 
 export default NavBar;

@@ -25,7 +25,7 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <SideNavBar onToggle={this.toggleIsOpen} isOpen={this.state.isOpen} />
-        <NavBar onToggle={this.toggleIsOpen} />
+        <NavBar toggleIsOpen={this.toggleIsOpen} />
         <HeroSection />
         <AboutSection {...aboutData} />
         <EducationSection {...educationData} />
