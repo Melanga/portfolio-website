@@ -31,7 +31,13 @@ const NavBar = ({ toggleIsOpen }) => {
   const scrollToHome = () => {
     animateScroll.scrollToTop();
   };
-
+  const scrollProps = {
+    smooth: true,
+    duration: 500,
+    spy: true,
+    exact: "true",
+    offset: -80,
+  };
   return (
     <React.Fragment>
       <Nav navScrolled={navScrolled}>
@@ -44,20 +50,30 @@ const NavBar = ({ toggleIsOpen }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about_me">About Me</NavLinks>
+              <NavLinks to="about_me" {...scrollProps}>
+                About Me
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="education">Education</NavLinks>
+              <NavLinks to="education" {...scrollProps}>
+                Education
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="projects">Projects</NavLinks>
+              <NavLinks to="projects" {...scrollProps}>
+                Projects
+              </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="technologies">Technologies</NavLinks>
+              <NavLinks to="technologies" {...scrollProps}>
+                Technologies
+              </NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to="footer">Contact Me</NavBtnLink>
+            <NavBtnLink to="footer" {...scrollProps}>
+              Contact Me
+            </NavBtnLink>
           </NavBtn>
         </NavBarContainer>
       </Nav>

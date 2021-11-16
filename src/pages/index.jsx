@@ -24,7 +24,10 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <SideNavBar onToggle={this.toggleIsOpen} isOpen={this.state.isOpen} />
+        <SideNavBar
+          toggleIsOpen={this.toggleIsOpen}
+          isOpen={this.state.isOpen}
+        />
         <NavBar toggleIsOpen={this.toggleIsOpen} />
         <HeroSection />
         <AboutSection {...aboutData} />
