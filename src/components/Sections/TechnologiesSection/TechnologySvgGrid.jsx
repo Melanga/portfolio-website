@@ -13,10 +13,16 @@ const TechnologySvgGridWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto auto auto;
   padding: 10px;
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: auto auto auto;
+  }
 `;
 
 const TechnologySvgWrapper = styled.div`
   padding: 10px;
+  @media screen and (max-width: 890px) {
+    padding: 5px;
+  }
 `;
 
 const TechnologySvg = styled.img`
@@ -26,6 +32,16 @@ const TechnologySvg = styled.img`
   transition: all 0.4s ease-in-out;
   :hover {
     transform: scale(1.3);
+  }
+  @media screen and (max-width: 1200px) {
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+  }
+  @media screen and (max-width: 480px) {
+    margin: 10px;
+    width: 50px;
+    height: 50px;
   }
 `;
 

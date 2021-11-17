@@ -5,11 +5,13 @@ import {
   SectionRow,
   Column1,
   Column2,
-  TextWrapper,
   TopLine,
   Heading,
 } from "../SectionElements";
-import { TechnologiesWrapper } from "./TechnologiesSectionElements";
+import {
+  TechnologiesWrapper,
+  TecTextWrapper,
+} from "./TechnologiesSectionElements";
 import TechnologyComponent from "./TechnologyComponent";
 import TechnologySvgGrid from "./TechnologySvgGrid";
 
@@ -20,8 +22,6 @@ const TechnologiesSection = ({
   topLine,
   lightText,
   headLine,
-  img,
-  alt,
 }) => {
   return (
     <React.Fragment>
@@ -29,7 +29,7 @@ const TechnologiesSection = ({
         <SectionWrapper>
           <SectionRow imgStart={imgStart}>
             <Column1>
-              <TextWrapper>
+              <TecTextWrapper>
                 <TopLine>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headLine}</Heading>
                 <TechnologiesWrapper>
@@ -42,7 +42,7 @@ const TechnologiesSection = ({
                   <TechnologyComponent technology="TensorFlow" />
                   <TechnologyComponent technology="ML" />
                 </TechnologiesWrapper>
-              </TextWrapper>
+              </TecTextWrapper>
             </Column1>
             <Column2>
               <TechnologySvgGrid></TechnologySvgGrid>

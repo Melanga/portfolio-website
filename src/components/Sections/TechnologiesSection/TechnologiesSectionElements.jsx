@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TextWrapper } from "../SectionElements";
 
 export const TechnologiesWrapper = styled.div`
   display: grid;
@@ -10,5 +11,11 @@ export const TechnologiesWrapper = styled.div`
   }
   @media screen and (max-width: 480px) {
     grid-template-columns: auto auto;
+  }
+`;
+
+export const TecTextWrapper = styled(TextWrapper)`
+  @media screen and (max-width: 480px) {
+    padding-bottom: 10px;
   }
 `;

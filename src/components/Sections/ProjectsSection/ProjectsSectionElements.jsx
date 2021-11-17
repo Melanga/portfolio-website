@@ -24,6 +24,9 @@ export const ProjectsWrapper = styled.div`
   grid-gap: 16px;
   padding: 0 50px;
 
+  @media screen and (max-width: 890px) {
+    padding: 0 10px;
+  }
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -50,6 +53,9 @@ export const ProjectCardWrapper = styled.div`
     cursor: pointer;
   } */
 
+  @media screen and (max-width: 890px) {
+    padding: 10px;
+  }
   @media screen and (max-width: 630px) {
     height: 340px;
   }
