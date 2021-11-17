@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 
-export const Technology = styled.div`
+const Technology = styled.div`
   padding: 10px;
   margin: 20px 0px 40px;
   //background-color: red;
@@ -11,13 +11,13 @@ export const Technology = styled.div`
   }
 `;
 
-export const TechnologyHeader = styled.p`
+const TechnologyHeader = styled.p`
   margin-bottom: 4px;
   font-size: 1rem;
   font-weight: bold;
 `;
 
-export const TechnologyBar = styled.div`
+const TechnologyBar = styled.div`
   height: 4px;
   width: 100px;
   background-color: teal;
