@@ -8,10 +8,16 @@ import {
   TextWrapper,
   TopLine,
   Heading,
-  Subtitle,
   ImgWrap,
   Img,
 } from "../SectionElements";
+import {
+  TechnologiesWrapper,
+  Technology,
+  TechnologyBar,
+  TechnologyHeader,
+} from "./TechnologiesSectionElements";
+import TechnologyComponent from "./TechnologyComponent";
 
 const TechnologiesSection = ({
   id,
@@ -20,8 +26,6 @@ const TechnologiesSection = ({
   topLine,
   lightText,
   headLine,
-  darkText,
-  description,
   img,
   alt,
 }) => {
@@ -34,7 +38,16 @@ const TechnologiesSection = ({
               <TextWrapper>
                 <TopLine>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headLine}</Heading>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
+                <TechnologiesWrapper>
+                  <TechnologyComponent technology="Python" />
+                  <TechnologyComponent technology="C" />
+                  <TechnologyComponent technology="Java" />
+                  <TechnologyComponent technology="Java Script" />
+                  <TechnologyComponent technology="React" />
+                  <TechnologyComponent technology="Flutter" />
+                  <TechnologyComponent technology="TensorFlow" />
+                  <TechnologyComponent technology="ML" />
+                </TechnologiesWrapper>
               </TextWrapper>
             </Column1>
             <Column2>
