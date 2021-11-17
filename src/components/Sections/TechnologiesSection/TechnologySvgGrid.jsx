@@ -1,13 +1,13 @@
 import React from "react";
+import styled from "styled-components";
 import cSvg from "../../../images/technologies/c.svg";
 import reactSvg from "../../../images/technologies/react.svg";
 import firebaseSvg from "../../../images/technologies/firebase.svg";
 import flutterSvg from "../../../images/technologies/flutter.svg";
-import javaSvg from "../../../images/technologies/java.svg";
 import javascriptSvg from "../../../images/technologies/javascript.svg";
 import pythonSvg from "../../../images/technologies/python.svg";
 import tensorflowSvg from "../../../images/technologies/tensorflow.svg";
-import styled from "styled-components";
+//import javaSvg from "../../../images/technologies/java.svg";
 
 const TechnologySvgGridWrapper = styled.div`
   display: grid;

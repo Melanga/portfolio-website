@@ -8,16 +8,10 @@ import {
   TextWrapper,
   TopLine,
   Heading,
-  ImgWrap,
-  Img,
 } from "../SectionElements";
-import {
-  TechnologiesWrapper,
-  Technology,
-  TechnologyBar,
-  TechnologyHeader,
-} from "./TechnologiesSectionElements";
+import { TechnologiesWrapper } from "./TechnologiesSectionElements";
 import TechnologyComponent from "./TechnologyComponent";
+import TechnologySvgGrid from "./TechnologySvgGrid";
 
 const TechnologiesSection = ({
   id,
@@ -51,9 +45,7 @@ const TechnologiesSection = ({
               </TextWrapper>
             </Column1>
             <Column2>
-              <ImgWrap>
-                <Img src={img} alt={alt} />
-              </ImgWrap>
+              <TechnologySvgGrid></TechnologySvgGrid>
             </Column2>
           </SectionRow>
         </SectionWrapper>
