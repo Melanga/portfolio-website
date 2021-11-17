@@ -11,7 +11,7 @@ export const ProjectsContainer = styled.div`
   @media screen and (max-width: 768px) {
     height: 1100px;
   }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 630px) {
     height: 1300px;
   }
 `;
@@ -27,7 +27,7 @@ export const ProjectsWrapper = styled.div`
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
   }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 630px) {
     grid-template-columns: 1fr;
     padding: 0 20px;
   }
@@ -50,7 +50,7 @@ export const ProjectCardWrapper = styled.div`
     cursor: pointer;
   } */
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 630px) {
     height: 340px;
   }
 `;
