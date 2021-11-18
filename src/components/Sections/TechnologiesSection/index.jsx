@@ -1,4 +1,5 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import {
   SectionContainer,
   SectionWrapper,
@@ -23,9 +24,11 @@ const TechnologiesSection = ({
   lightText,
   headLine,
 }) => {
+  const { ref, inView } = useInView({ threshold: 0.3 });
+
   return (
     <React.Fragment>
-      <SectionContainer lightBg={lightBg} id={id}>
+      <SectionContainer lightBg={lightBg} id={id} ref={ref}>
         <SectionWrapper>
           <SectionRow imgStart={imgStart}>
             <Column1>
@@ -33,14 +36,46 @@ const TechnologiesSection = ({
                 <TopLine>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headLine}</Heading>
                 <TechnologiesWrapper>
-                  <TechnologyComponent technology="Python" />
-                  <TechnologyComponent technology="C" />
-                  <TechnologyComponent technology="Java" />
-                  <TechnologyComponent technology="Java Script" />
-                  <TechnologyComponent technology="React" />
-                  <TechnologyComponent technology="Flutter" />
-                  <TechnologyComponent technology="TensorFlow" />
-                  <TechnologyComponent technology="ML" />
+                  <TechnologyComponent
+                    inView={inView}
+                    timeDelay={0}
+                    technology="Python"
+                  />
+                  <TechnologyComponent
+                    inView={inView}
+                    timeDelay={500}
+                    technology="C"
+                  />
+                  <TechnologyComponent
+                    inView={inView}
+                    timeDelay={700}
+                    technology="Java"
+                  />
+                  <TechnologyComponent
+                    inView={inView}
+                    timeDelay={300}
+                    technology="Java Script"
+                  />
+                  <TechnologyComponent
+                    inView={inView}
+                    timeDelay={700}
+                    technology="React"
+                  />
+                  <TechnologyComponent
+                    inView={inView}
+                    timeDelay={500}
+                    technology="Flutter"
+                  />
+                  <TechnologyComponent
+                    inView={inView}
+                    timeDelay={300}
+                    technology="TensorFlow"
+                  />
+                  <TechnologyComponent
+                    inView={inView}
+                    timeDelay={500}
+                    technology="ML"
+                  />
                 </TechnologiesWrapper>
               </TecTextWrapper>
             </Column1>
