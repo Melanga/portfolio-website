@@ -19,9 +19,14 @@ const TechnologySvgGridWrapper = styled.div`
 `;
 
 const TechnologySvgWrapper = styled.div`
+  align-items: center;
   padding: 10px;
+  transition: all 0.4s ease-in-out;
   @media screen and (max-width: 890px) {
     padding: 5px;
+  }
+  :hover {
+    transform: scale(1.3);
   }
 `;
 
@@ -29,10 +34,6 @@ const TechnologySvg = styled.img`
   width: 80px;
   height: 80px;
   margin: ${({ margin = 0 }) => margin};
-  transition: all 0.4s ease-in-out;
-  :hover {
-    transform: scale(1.3);
-  }
   @media screen and (max-width: 1200px) {
     margin: 10px;
     width: 60px;
@@ -49,7 +50,7 @@ const TechnologySvgGrid = () => {
   return (
     <TechnologySvgGridWrapper>
       <TechnologySvgWrapper>
-        <TechnologySvg src={tensorflowSvg} margin="30px 10px 0px 0px" />
+        <TechnologySvg src={tensorflowSvg} margin="30px 0px 0px 20px" />
       </TechnologySvgWrapper>
       <TechnologySvgWrapper>
         <TechnologySvg src={firebaseSvg} margin="80px 0px 10px 40px" />
