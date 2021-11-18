@@ -36,15 +36,15 @@ const SideNavBar = ({ isOpen, toggleIsOpen }) => {
           >
             Education
           </SideNavBarLink>
-          <SideNavBarLink to="projects" onClick={toggleIsOpen} {...scrollProps}>
-            Projects
-          </SideNavBarLink>
           <SideNavBarLink
             to="technologies"
             onClick={toggleIsOpen}
             {...scrollProps}
           >
             Technologies
+          </SideNavBarLink>
+          <SideNavBarLink to="projects" onClick={toggleIsOpen} {...scrollProps}>
+            Projects
           </SideNavBarLink>
         </SideNavBarMenu>
         <SideNavBtnWrap>

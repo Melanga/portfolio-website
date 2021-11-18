@@ -60,13 +60,13 @@ const NavBar = ({ toggleIsOpen }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="projects" {...scrollProps}>
-                Projects
+              <NavLinks to="technologies" {...scrollProps}>
+                Technologies
               </NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="technologies" {...scrollProps}>
-                Technologies
+              <NavLinks to="projects" {...scrollProps}>
+                Projects
               </NavLinks>
             </NavItem>
           </NavMenu>
