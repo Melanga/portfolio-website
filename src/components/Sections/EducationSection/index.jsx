@@ -15,38 +15,44 @@ import {
   EducationTextWrapper,
 } from "./EducationSectionElements";
 import EducationTimeline from "./EducationTimeline";
-class EducationSection extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <SectionContainer lightBg={this.props.lightBg} id={this.props.id}>
-          <SectionWrapper>
-            <SectionRow imgStart={this.props.imgStart}>
-              <Column1>
-                <EducationTextWrapper>
-                  <TopLine>{this.props.topLine}</TopLine>
-                  <Heading lightText={this.props.lightText}>
-                    {this.props.headLine}
-                  </Heading>
-                  {/* <Subtitle darkText={this.props.darkText}>
-                    {this.props.description}
-                  </Subtitle> */}
-                </EducationTextWrapper>
-                <EducationTimelineWrapper>
-                  <EducationTimeline vertical={false} />
-                </EducationTimelineWrapper>
-              </Column1>
-              <Column2>
-                <ImgWrap>
-                  <Img src={this.props.img} alt={this.props.alt} />
-                </ImgWrap>
-              </Column2>
-            </SectionRow>
-          </SectionWrapper>
-        </SectionContainer>
-      </React.Fragment>
-    );
-  }
-}
+
+const EducationSection = ({
+  id,
+  lightBg,
+  imgStart,
+  topLine,
+  lightText,
+  headLine,
+  img,
+  alt,
+}) => {
+  return (
+    <React.Fragment>
+      <SectionContainer lightBg={lightBg} id={id}>
+        <SectionWrapper>
+          <SectionRow imgStart={imgStart}>
+            <Column1>
+              <EducationTextWrapper>
+                <TopLine>{topLine}</TopLine>
+                <Heading lightText={lightText}>{headLine}</Heading>
+                {/* <Subtitle darkText={darkText}>
+                  {description}
+                </Subtitle> */}
+              </EducationTextWrapper>
+              <EducationTimelineWrapper>
+                <EducationTimeline vertical={false} />
+              </EducationTimelineWrapper>
+            </Column1>
+            <Column2>
+              <ImgWrap>
+                <Img src={img} alt={alt} />
+              </ImgWrap>
+            </Column2>
+          </SectionRow>
+        </SectionWrapper>
+      </SectionContainer>
+    </React.Fragment>
+  );
+};
 
 export default EducationSection;
