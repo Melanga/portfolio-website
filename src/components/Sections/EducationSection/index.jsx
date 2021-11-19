@@ -1,4 +1,6 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
+import { useSpring, animated, config } from "react-spring";
 import {
   SectionContainer,
   SectionWrapper,
@@ -26,27 +28,64 @@ const EducationSection = ({
   img,
   alt,
 }) => {
+  const { ref, inView } = useInView({ threshold: 0.3 });
+
+  let contentTextProps = useSpring({
+    opacity: inView ? 1 : 0,
+    marginLeft: inView ? 0 : 500,
+    config: config.gentle,
+  });
+
+  const contentHeaderProps = useSpring({
+    opacity: inView ? 1 : 0,
+    marginLeft: inView ? 0 : 500,
+    config: config.slow,
+    //delay: 200,
+  });
+  const contentPProps = useSpring({
+    opacity: inView ? 1 : 0,
+    marginLeft: inView ? 0 : 500,
+    config: config.slow,
+    delay: 200,
+  });
+
+  const contentImgProps = useSpring({
+    opacity: inView ? 1 : 0,
+    //marginRight: inView ? 0 : -100,
+    config: config.gentle,
+    delay: 300,
+  });
+
   return (
     <React.Fragment>
-      <SectionContainer lightBg={lightBg} id={id}>
+      <SectionContainer ref={ref} lightBg={lightBg} id={id}>
         <SectionWrapper>
           <SectionRow imgStart={imgStart}>
             <Column1>
               <EducationTextWrapper>
-                <TopLine>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headLine}</Heading>
+                <animated.div style={contentTextProps}>
+                  <TopLine>{topLine}</TopLine>
+                </animated.div>
+                <animated.div style={contentHeaderProps}>
+                  <Heading lightText={lightText}>{headLine}</Heading>
+                </animated.div>
                 {/* <Subtitle darkText={darkText}>
                   {description}
                 </Subtitle> */}
               </EducationTextWrapper>
+
               <EducationTimelineWrapper>
-                <EducationTimeline vertical={false} />
+                <animated.div style={contentPProps}>
+                  <EducationTimeline vertical={false} />
+                </animated.div>
               </EducationTimelineWrapper>
             </Column1>
             <Column2>
-              <ImgWrap>
-                <Img src={img} alt={alt} />
-              </ImgWrap>
+              <animated.div style={contentImgProps}>
+                <ImgWrap>
+                  <Img src={img} alt={alt} />
+                </ImgWrap>
+              </animated.div>
             </Column2>
           </SectionRow>
         </SectionWrapper>
