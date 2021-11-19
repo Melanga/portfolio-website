@@ -33,7 +33,7 @@ const AboutSection = ({
     //console.log("inView = ", inView);
   });
 
-  let contentTextProps = useSpring({
+  const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
     marginLeft: inView ? 0 : -400,
     config: config.gentle,
