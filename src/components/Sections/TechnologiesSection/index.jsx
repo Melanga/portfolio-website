@@ -1,5 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { useSpring, animated, config } from "react-spring";
 import {
   SectionContainer,
   SectionWrapper,
@@ -26,6 +27,26 @@ const TechnologiesSection = ({
 }) => {
   const { ref, inView } = useInView({ threshold: 0.3 });
 
+  const contentTextProps = useSpring({
+    opacity: inView ? 1 : 0,
+    marginLeft: inView ? 0 : -500,
+    config: config.gentle,
+  });
+
+  const contentHeaderProps = useSpring({
+    opacity: inView ? 1 : 0,
+    marginLeft: inView ? 0 : -500,
+    config: config.slow,
+    //delay: 200,
+  });
+
+  const contentSvgGridProps = useSpring({
+    opacity: inView ? 1 : 0,
+    //marginRight: inView ? 0 : -100,
+    config: config.gentle,
+    delay: 300,
+  });
+
   return (
     <React.Fragment>
       <SectionContainer lightBg={lightBg} id={id} ref={ref}>
@@ -33,54 +54,60 @@ const TechnologiesSection = ({
           <SectionRow imgStart={imgStart}>
             <Column1>
               <TecTextWrapper>
-                <TopLine>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headLine}</Heading>
+                <animated.div style={contentTextProps}>
+                  <TopLine>{topLine}</TopLine>
+                </animated.div>
+                <animated.div style={contentHeaderProps}>
+                  <Heading lightText={lightText}>{headLine}</Heading>
+                </animated.div>
                 <TechnologiesWrapper>
                   <TechnologyComponent
                     inView={inView}
-                    timeDelay={0}
+                    timeDelay={200}
                     technology="Python"
                   />
                   <TechnologyComponent
                     inView={inView}
-                    timeDelay={500}
+                    timeDelay={700}
                     technology="C"
                   />
                   <TechnologyComponent
                     inView={inView}
-                    timeDelay={700}
+                    timeDelay={900}
                     technology="Java"
                   />
                   <TechnologyComponent
                     inView={inView}
-                    timeDelay={300}
+                    timeDelay={500}
                     technology="Java Script"
                   />
                   <TechnologyComponent
                     inView={inView}
-                    timeDelay={700}
+                    timeDelay={900}
                     technology="React"
                   />
                   <TechnologyComponent
                     inView={inView}
-                    timeDelay={500}
+                    timeDelay={700}
                     technology="Flutter"
                   />
                   <TechnologyComponent
                     inView={inView}
-                    timeDelay={300}
+                    timeDelay={500}
                     technology="TensorFlow"
                   />
                   <TechnologyComponent
                     inView={inView}
-                    timeDelay={500}
+                    timeDelay={700}
                     technology="ML"
                   />
                 </TechnologiesWrapper>
               </TecTextWrapper>
             </Column1>
             <Column2>
-              <TechnologySvgGrid></TechnologySvgGrid>
+              <animated.div style={contentSvgGridProps}>
+                <TechnologySvgGrid></TechnologySvgGrid>
+              </animated.div>
             </Column2>
           </SectionRow>
         </SectionWrapper>
