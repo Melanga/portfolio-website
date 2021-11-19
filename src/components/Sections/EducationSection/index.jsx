@@ -30,7 +30,7 @@ const EducationSection = ({
 }) => {
   const { ref, inView } = useInView({ threshold: 0.3 });
 
-  let contentTextProps = useSpring({
+  const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
     marginLeft: inView ? 0 : 500,
     config: config.gentle,
@@ -42,7 +42,7 @@ const EducationSection = ({
     config: config.slow,
     //delay: 200,
   });
-  const contentPProps = useSpring({
+  const contentTimelineProps = useSpring({
     opacity: inView ? 1 : 0,
     marginLeft: inView ? 0 : 500,
     config: config.slow,
@@ -75,7 +75,7 @@ const EducationSection = ({
               </EducationTextWrapper>
 
               <EducationTimelineWrapper>
-                <animated.div style={contentPProps}>
+                <animated.div style={contentTimelineProps}>
                   <EducationTimeline vertical={false} />
                 </animated.div>
               </EducationTimelineWrapper>
