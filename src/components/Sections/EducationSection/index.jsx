@@ -32,19 +32,19 @@ const EducationSection = ({
 
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
-    marginLeft: inView ? 0 : 500,
+    //marginRight: inView ? 0 : 400,
     config: config.gentle,
   });
 
   const contentHeaderProps = useSpring({
     opacity: inView ? 1 : 0,
-    marginLeft: inView ? 0 : 500,
+    //marginRight: inView ? 0 : 400,
     config: config.slow,
     //delay: 200,
   });
   const contentTimelineProps = useSpring({
     opacity: inView ? 1 : 0,
-    marginLeft: inView ? 0 : 500,
+    //marginLeft: inView ? 0 : 400,
     config: config.slow,
     delay: 200,
   });
@@ -73,12 +73,11 @@ const EducationSection = ({
                   {description}
                 </Subtitle> */}
               </EducationTextWrapper>
-
-              <EducationTimelineWrapper>
-                <animated.div style={contentTimelineProps}>
+              <animated.div style={contentTimelineProps}>
+                <EducationTimelineWrapper>
                   <EducationTimeline vertical={false} />
-                </animated.div>
-              </EducationTimelineWrapper>
+                </EducationTimelineWrapper>
+              </animated.div>
             </Column1>
             <Column2>
               <animated.div style={contentImgProps}>

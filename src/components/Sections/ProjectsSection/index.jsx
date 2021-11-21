@@ -21,14 +21,14 @@ const ProjectsSection = () => {
 
   const contentLeftCardProps = useSpring({
     opacity: inView ? 1 : 0,
-    marginLeft: inView ? 0 : -400,
+    //marginLeft: inView ? 0 : -400,
     config: config.slow,
     delay: 300,
   });
 
   const contentRightCardProps = useSpring({
     opacity: inView ? 1 : 0,
-    marginRight: inView ? 0 : -400,
+    //marginRight: inView ? 0 : -400,
     config: config.slow,
     delay: 300,
   });
@@ -41,24 +41,22 @@ const ProjectsSection = () => {
   });
 
   return (
-    <React.Fragment>
-      <ProjectsContainer id="projects" ref={ref}>
-        <animated.div style={contentTextProps}>
-          <ProjectsTitle>My Projects</ProjectsTitle>
+    <ProjectsContainer id="projects" ref={ref}>
+      <animated.div style={contentTextProps}>
+        <ProjectsTitle>My Projects</ProjectsTitle>
+      </animated.div>
+      <ProjectsWrapper>
+        <animated.div style={contentLeftCardProps}>
+          <ProjectCard {...projectData1} />
         </animated.div>
-        <ProjectsWrapper>
-          <animated.div style={contentLeftCardProps}>
-            <ProjectCard {...projectData1} />
-          </animated.div>
-          <animated.div style={contentMiddleCardProps}>
-            <ProjectCard {...projectData2} />
-          </animated.div>
-          <animated.div style={contentRightCardProps}>
-            <ProjectCard {...projectData3} />
-          </animated.div>
-        </ProjectsWrapper>
-      </ProjectsContainer>
-    </React.Fragment>
+        <animated.div style={contentMiddleCardProps}>
+          <ProjectCard {...projectData2} />
+        </animated.div>
+        <animated.div style={contentRightCardProps}>
+          <ProjectCard {...projectData3} />
+        </animated.div>
+      </ProjectsWrapper>
+    </ProjectsContainer>
   );
 };
 
