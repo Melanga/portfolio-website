@@ -18,14 +18,11 @@ class EducationTimeline extends React.Component {
         title: "Jan 2016",
         cardTitle: "St. Mary's College, Kegalle",
         cardSubtitle: "I have done my O/L  and A/L in Physical Sciences",
-        // cardDetailedText:
-        //   "8A passes and C for English Literature\nAdvanced Level:\n Physics - B | Chemistry - C | Combined Maths - C.",
       },
       {
         title: "Jan 2023",
         cardTitle: "Uva Wellassa University of Sri Lanka",
         cardSubtitle: "Bachelor of Industrial Information Technology",
-        // cardDetailedText: "Currently Undergraduate",
       },
     ];
 
