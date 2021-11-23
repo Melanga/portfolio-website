@@ -1,6 +1,7 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
+import useViewport from "../../Hook/ViewPort";
 import {
   SectionContainer,
   SectionWrapper,
@@ -30,30 +31,35 @@ const EducationSection = ({
 }) => {
   const { ref, inView } = useInView({ threshold: 0.3 });
 
+  const { width } = useViewport();
+  let laptopWidth = width > 1200;
+  console.log(laptopWidth);
+
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
-    //marginRight: inView ? 0 : 400,
+    marginLeft: laptopWidth ? (inView ? 0 : 400) : 0,
     config: config.gentle,
+    delay: laptopWidth ? 500 : 100,
   });
 
   const contentHeaderProps = useSpring({
     opacity: inView ? 1 : 0,
-    //marginRight: inView ? 0 : 400,
+    marginLeft: laptopWidth ? (inView ? 0 : 400) : 0,
     config: config.slow,
-    //delay: 200,
+    delay: laptopWidth ? 500 : 100,
   });
   const contentTimelineProps = useSpring({
     opacity: inView ? 1 : 0,
-    //marginLeft: inView ? 0 : 400,
+    marginLeft: laptopWidth ? (inView ? 0 : 400) : 0,
     config: config.slow,
-    delay: 200,
+    delay: laptopWidth ? 500 : 100,
   });
 
   const contentImgProps = useSpring({
     opacity: inView ? 1 : 0,
-    //marginRight: inView ? 0 : -100,
-    config: config.gentle,
-    delay: 300,
+    //marginRight: laptopWidth ? (inView ? 0 : -100) : 0,
+    //config: config.wobbly,
+    //delay: 300,
   });
 
   return (
