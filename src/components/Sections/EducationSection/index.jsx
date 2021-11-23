@@ -35,31 +35,32 @@ const EducationSection = ({
   let laptopWidth = width > 1200;
   console.log(laptopWidth);
 
+  const contentImgProps = useSpring({
+    opacity: inView ? 1 : 0,
+    marginLeft: laptopWidth ? (inView ? 0 : -400) : 0,
+    config: config.gentle,
+    //delay: 300,
+  });
+
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
-    marginLeft: laptopWidth ? (inView ? 0 : 400) : 0,
+    marginTop: laptopWidth ? (inView ? 0 : -200) : 0,
     config: config.gentle,
-    delay: laptopWidth ? 500 : 100,
+    delay: 100,
   });
 
   const contentHeaderProps = useSpring({
     opacity: inView ? 1 : 0,
-    marginLeft: laptopWidth ? (inView ? 0 : 400) : 0,
+    marginTop: laptopWidth ? (inView ? 0 : -200) : 0,
     config: config.slow,
-    delay: laptopWidth ? 500 : 100,
-  });
-  const contentTimelineProps = useSpring({
-    opacity: inView ? 1 : 0,
-    marginLeft: laptopWidth ? (inView ? 0 : 400) : 0,
-    config: config.slow,
-    delay: laptopWidth ? 500 : 100,
+    delay: 100,
   });
 
-  const contentImgProps = useSpring({
+  const contentTimelineProps = useSpring({
     opacity: inView ? 1 : 0,
-    //marginRight: laptopWidth ? (inView ? 0 : -100) : 0,
-    //config: config.wobbly,
-    //delay: 300,
+    marginTop: laptopWidth ? (inView ? 0 : -200) : 0,
+    config: config.wobbly,
+    delay: 100,
   });
 
   return (
