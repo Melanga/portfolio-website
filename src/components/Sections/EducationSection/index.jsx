@@ -33,7 +33,6 @@ const EducationSection = ({
 
   const { width } = useViewport();
   let laptopWidth = width > 1200;
-  console.log(laptopWidth);
 
   const contentImgProps = useSpring({
     opacity: inView ? 1 : 0,

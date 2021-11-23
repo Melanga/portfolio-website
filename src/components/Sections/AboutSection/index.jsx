@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import { React } from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import {
@@ -28,10 +28,6 @@ const AboutSection = ({
   alt,
 }) => {
   const { ref, inView } = useInView({ threshold: 0.3 });
-
-  useEffect(() => {
-    //console.log("inView = ", inView);
-  });
 
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
