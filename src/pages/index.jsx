@@ -1,43 +1,35 @@
-import React from "react";
-import AboutSection from "../components/Sections/AboutSection";
+import React, { useState } from "react";
 import { aboutData } from "../components/Sections/AboutSection/Data";
-import EducationSection from "../components/Sections/EducationSection";
 import { educationData } from "../components/Sections/EducationSection/Data";
+import { technologiesData } from "../components/Sections/TechnologiesSection/Data";
+import AboutSection from "../components/Sections/AboutSection";
+import EducationSection from "../components/Sections/EducationSection";
 import HeroSection from "../components/HeroSection";
 import NavBar from "../components/NavBar";
 import SideNavBar from "../components/SideNavBar";
 import TechnologiesSection from "../components/Sections/TechnologiesSection";
-import { technologiesData } from "../components/Sections/TechnologiesSection/Data";
 import ProjectsSection from "../components/Sections/ProjectsSection";
 import Footer from "../components/Footer";
 
-class Home extends React.Component {
-  state = {
-    isOpen: false,
+const Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleIsOpen = () => {
+    setIsOpen(!isOpen);
   };
 
-  toggleIsOpen = () => {
-    let toggledOption = !this.state.isOpen;
-    this.setState({ isOpen: toggledOption });
-  };
-
-  render() {
-    return (
-      <React.Fragment>
-        <SideNavBar
-          toggleIsOpen={this.toggleIsOpen}
-          isOpen={this.state.isOpen}
-        />
-        <NavBar toggleIsOpen={this.toggleIsOpen} />
-        <HeroSection />
-        <AboutSection {...aboutData} />
-        <EducationSection {...educationData} />
-        <TechnologiesSection {...technologiesData} />
-        <ProjectsSection />
-        <Footer />
-      </React.Fragment>
-    );
-  }
-}
+  return (
+    <React.Fragment>
+      <SideNavBar toggleIsOpen={toggleIsOpen} isOpen={isOpen} />
+      <NavBar toggleIsOpen={toggleIsOpen} />
+      <HeroSection />
+      <AboutSection {...aboutData} />
+      <EducationSection {...educationData} />
+      <TechnologiesSection {...technologiesData} />
+      <ProjectsSection />
+      <Footer />
+    </React.Fragment>
+  );
+};
 
 export default Home;
