@@ -17,7 +17,7 @@ const calc = (x, y, rect) => [
 const trans = (x, y, s) =>
   `perspective(700px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
-const ProjectCard = ({ img, alt, heading, description }) => {
+const ProjectCard = ({ img, alt, heading, description, trigger }) => {
   const ref = useRef(null);
   const [xys, set] = useState([0, 0, 1]);
   const props = useSpring({ xys, config: config.wobbly });
@@ -27,8 +27,12 @@ const ProjectCard = ({ img, alt, heading, description }) => {
         style={{ transform: props.xys.to(trans) }}
         onMouseLeave={() => set([0, 0, 1])}
         onMouseMove={(e) => {
-          const rect = ref.current.getBoundingClientRect();
-          set(calc(e.clientX, e.clientY, rect));
+          if (trigger) {
+            const rect = ref.current.getBoundingClientRect();
+            set(calc(e.clientX, e.clientY, rect));
+          } else {
+            set([0, 0, 1]);
+          }
         }}
       >
         <ProjectCardWrapper id={img}>
