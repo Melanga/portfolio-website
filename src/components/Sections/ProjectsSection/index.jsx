@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
+import useViewport from "../../Hook/ViewPort";
 import ProjectCard from "./projectCard";
 import { projectData1, projectData2, projectData3 } from "./ProjectsData";
 
@@ -11,7 +12,15 @@ import {
 } from "./ProjectsSectionElements";
 
 const ProjectsSection = () => {
+  const [enableHoverAnimation, setEnableHoverAnimation] = useState(true);
+  const { width } = useViewport();
+  let laptopWidth = width > 1200;
+
   const { ref, inView } = useInView({ threshold: 0.3 });
+
+  useEffect(() => {
+    setEnableHoverAnimation(laptopWidth);
+  }, [laptopWidth]);
 
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
@@ -47,13 +56,13 @@ const ProjectsSection = () => {
       </animated.div>
       <ProjectsWrapper>
         <animated.div style={contentLeftCardProps}>
-          <ProjectCard {...projectData1} />
+          <ProjectCard {...projectData1} trigger={enableHoverAnimation} />
         </animated.div>
         <animated.div style={contentMiddleCardProps}>
-          <ProjectCard {...projectData2} />
+          <ProjectCard {...projectData2} trigger={enableHoverAnimation} />
         </animated.div>
         <animated.div style={contentRightCardProps}>
-          <ProjectCard {...projectData3} />
+          <ProjectCard {...projectData3} trigger={enableHoverAnimation} />
         </animated.div>
       </ProjectsWrapper>
     </ProjectsContainer>
