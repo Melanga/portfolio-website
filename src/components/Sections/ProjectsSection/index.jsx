@@ -30,15 +30,15 @@ const ProjectsSection = () => {
 
   const contentLeftCardProps = useSpring({
     opacity: inView ? 1 : 0,
-    //marginLeft: inView ? 0 : -400,
-    config: config.slow,
+    marginLeft: inView ? 0 : -300,
+    config: config.gentle,
     delay: 300,
   });
 
   const contentRightCardProps = useSpring({
     opacity: inView ? 1 : 0,
-    //marginRight: inView ? 0 : -400,
-    config: config.slow,
+    marginRight: inView ? 0 : -300,
+    config: config.gentle,
     delay: 300,
   });
 
