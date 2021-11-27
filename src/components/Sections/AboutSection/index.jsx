@@ -13,7 +13,7 @@ import {
   Subtitle,
   ImgWrap,
   Img,
-} from "../SectionElements";
+} from "../../Elements/SectionElements";
 
 const AboutSection = ({
   id,

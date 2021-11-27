@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SectionRow } from "../Sections/SectionElements";
+import { SectionRow } from "../Elements/SectionElements";
 
 export const ContactFormWrapper = styled.div`
   position: relative;

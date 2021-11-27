@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TextWrapper } from "../SectionElements";
+import { TextWrapper } from "../../Elements/SectionElements";
 
 export const TechnologiesWrapper = styled.div`
   display: grid;

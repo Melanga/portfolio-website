@@ -9,7 +9,7 @@ import {
   Column2,
   TopLine,
   Heading,
-} from "../SectionElements";
+} from "../../Elements/SectionElements";
 import {
   TechnologiesWrapper,
   TecTextWrapper,

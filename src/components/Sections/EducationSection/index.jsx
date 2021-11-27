@@ -12,7 +12,7 @@ import {
   Heading,
   ImgWrap,
   Img,
-} from "../SectionElements";
+} from "../../Elements/SectionElements";
 import {
   EducationTimelineWrapper,
   EducationTextWrapper,

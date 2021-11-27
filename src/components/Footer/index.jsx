@@ -6,7 +6,7 @@ import {
   Column2,
   TextWrapper,
   Heading,
-} from "../Sections/SectionElements";
+} from "../Elements/SectionElements";
 import {
   ContactDetail,
   ContactDetailsWrapper,
