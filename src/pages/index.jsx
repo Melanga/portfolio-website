@@ -14,6 +14,7 @@ import Footer from "../components/Footer";
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  //this handle toggling of nav side bar
   const toggleIsOpen = () => {
     setIsOpen(!isOpen);
   };
