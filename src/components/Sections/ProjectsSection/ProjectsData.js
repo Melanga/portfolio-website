@@ -13,7 +13,7 @@ export const projectData1 = {
 export const projectData2 = {
     id:'pd2',
     heading:'Event Extractor',
-    description:'A coevolution DNN model to extract event details from a text',
+    description:'A convolution DNN model to extract event details from a text',
     img: Icon1,
     alt: 'project icon 2',
 }
