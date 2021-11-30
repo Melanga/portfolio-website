@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Parallax } from "@react-spring/parallax";
 import { FaBars } from "react-icons/fa";
 import {
   Nav,
@@ -13,7 +14,7 @@ import {
 } from "./NavBarElements";
 import { animateScroll } from "react-scroll";
 
-const NavBar = ({ toggleIsOpen }) => {
+const NavBar = ({ toggleIsOpen, scroll }) => {
   const [navScrolled, setNavScrolled] = useState(false);
 
   const onNavScrolled = () => {
@@ -42,7 +43,12 @@ const NavBar = ({ toggleIsOpen }) => {
     <React.Fragment>
       <Nav navScrolled={navScrolled}>
         <NavBarContainer>
-          <NavLogo to="/" onClick={scrollToHome}>
+          <NavLogo
+            //to="/"
+            onClick={() => {
+              scroll(0);
+            }}
+          >
             Portfolio
           </NavLogo>
           <MobileIcon onClick={toggleIsOpen}>
