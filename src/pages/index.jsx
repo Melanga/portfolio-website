@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { aboutData } from "../components/Sections/AboutSection/Data";
 import { educationData } from "../components/Sections/EducationSection/Data";
 import { technologiesData } from "../components/Sections/TechnologiesSection/Data";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import AboutSection from "../components/Sections/AboutSection";
 import EducationSection from "../components/Sections/EducationSection";
 import HeroSection from "../components/HeroSection";
@@ -21,14 +22,32 @@ const Home = () => {
 
   return (
     <React.Fragment>
-      <SideNavBar toggleIsOpen={toggleIsOpen} isOpen={isOpen} />
-      <NavBar toggleIsOpen={toggleIsOpen} />
-      <HeroSection />
-      <AboutSection {...aboutData} />
-      <EducationSection {...educationData} />
-      <TechnologiesSection {...technologiesData} />
-      <ProjectsSection />
-      <Footer />
+      <Parallax pages={6} style={{ top: "0", left: "0" }}>
+        <ParallaxLayer offset={0} speed={0} sticky={{ start: 0, end: 5 }}>
+          <SideNavBar toggleIsOpen={toggleIsOpen} isOpen={isOpen} />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0} sticky={{ start: 0, end: 5 }}>
+          <NavBar toggleIsOpen={toggleIsOpen} />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0}>
+          <HeroSection />
+        </ParallaxLayer>
+        <ParallaxLayer offset={1} speed={0}>
+          <AboutSection {...aboutData} />
+        </ParallaxLayer>
+        <ParallaxLayer offset={2} speed={0}>
+          <EducationSection {...educationData} />
+        </ParallaxLayer>
+        <ParallaxLayer offset={3} speed={0}>
+          <TechnologiesSection {...technologiesData} />
+        </ParallaxLayer>
+        <ParallaxLayer offset={4} speed={0}>
+          <ProjectsSection />
+        </ParallaxLayer>
+        <ParallaxLayer offset={5} speed={0}>
+          <Footer />
+        </ParallaxLayer>
+      </Parallax>
     </React.Fragment>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { useSpring, animated, config } from "react-spring";
 import { useInView } from "react-intersection-observer";
+import { ParallaxLayer } from "@react-spring/parallax";
 //import { Button } from "../ButtonElement";
 import {
   HeroContainer,
@@ -37,7 +38,17 @@ const HeroSection = () => {
       </HeroBg>
       <HeroContent>
         <animated.div style={propsHeader}>
-          <HeroH1>Melanga Dissanayake</HeroH1>
+          <ParallaxLayer
+            offset={0}
+            speed={2.5}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <HeroH1>Melanga Dissanayake</HeroH1>
+          </ParallaxLayer>
           <HeroP>
             I'm Melanga Bhathiya and I am currently an undergraduate at the Uva
             Wellassa University of Sri Lanka pursuing my special degree in
