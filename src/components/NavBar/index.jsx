@@ -14,19 +14,19 @@ import {
 //import { animateScroll } from "react-scroll";
 
 const NavBar = ({ toggleIsOpen, scroll }) => {
-  const [navScrolled, setNavScrolled] = useState(false);
+  // const [navScrolled, setNavScrolled] = useState(false);
 
-  const onNavScrolled = () => {
-    if (window.scrollY >= 80) {
-      setNavScrolled(true);
-    } else {
-      setNavScrolled(false);
-    }
-  };
+  // const onNavScrolled = () => {
+  //   if (window.scrollY >= 80) {
+  //     setNavScrolled(true);
+  //   } else {
+  //     setNavScrolled(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", onNavScrolled);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", onNavScrolled);
+  // }, []);
 
   // const scrollToHome = () => {
   //   animateScroll.scrollToTop();
@@ -40,7 +40,7 @@ const NavBar = ({ toggleIsOpen, scroll }) => {
   // };
   return (
     <React.Fragment>
-      <Nav navScrolled={navScrolled}>
+      <Nav>
         <NavBarContainer>
           <NavLogo
             //to="/"
