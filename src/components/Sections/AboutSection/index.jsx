@@ -1,6 +1,7 @@
 import { React } from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
+import { ParallaxLayer } from "@react-spring/parallax";
 import {
   SectionContainer,
   SectionWrapper,
@@ -27,7 +28,7 @@ const AboutSection = ({
   img,
   alt,
 }) => {
-  const { ref, inView } = useInView({ threshold: 0.3 });
+  const { ref, inView } = useInView({ threshold: 0.5 });
 
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
@@ -58,28 +59,39 @@ const AboutSection = ({
   return (
     <SectionContainer ref={ref} lightBg={lightBg} id={id}>
       <SectionWrapper>
-        <SectionRow imgStart={imgStart}>
-          <Column1>
-            <TextWrapper>
-              <animated.div style={contentTextProps}>
-                <TopLine>{topLine}</TopLine>
+        <ParallaxLayer
+          offset={0.5}
+          speed={0.5}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 4,
+          }}
+        >
+          <SectionRow imgStart={imgStart}>
+            <Column1>
+              <TextWrapper>
+                <animated.div style={contentTextProps}>
+                  <TopLine>{topLine}</TopLine>
+                </animated.div>
+                <animated.div style={contentHeaderProps}>
+                  <Heading lightText={lightText}>{headLine}</Heading>
+                </animated.div>
+                <animated.div style={contentPProps}>
+                  <Subtitle darkText={darkText}>{description}</Subtitle>
+                </animated.div>
+              </TextWrapper>
+            </Column1>
+            <Column2>
+              <animated.div style={contentImgProps}>
+                <ImgWrap>
+                  <Img src={img} alt={alt} />
+                </ImgWrap>
               </animated.div>
-              <animated.div style={contentHeaderProps}>
-                <Heading lightText={lightText}>{headLine}</Heading>
-              </animated.div>
-              <animated.div style={contentPProps}>
-                <Subtitle darkText={darkText}>{description}</Subtitle>
-              </animated.div>
-            </TextWrapper>
-          </Column1>
-          <Column2>
-            <animated.div style={contentImgProps}>
-              <ImgWrap>
-                <Img src={img} alt={alt} />
-              </ImgWrap>
-            </animated.div>
-          </Column2>
-        </SectionRow>
+            </Column2>
+          </SectionRow>
+        </ParallaxLayer>
       </SectionWrapper>
     </SectionContainer>
   );

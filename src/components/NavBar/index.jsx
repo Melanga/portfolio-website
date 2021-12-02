@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FaBars } from "react-icons/fa";
 import {
   Nav,
@@ -11,38 +11,43 @@ import {
   NavBtn,
   NavBtnLink,
 } from "./NavBarElements";
-import { animateScroll } from "react-scroll";
+//import { animateScroll } from "react-scroll";
 
-const NavBar = ({ toggleIsOpen }) => {
-  const [navScrolled, setNavScrolled] = useState(false);
+const NavBar = ({ toggleIsOpen, scroll }) => {
+  // const [navScrolled, setNavScrolled] = useState(false);
 
-  const onNavScrolled = () => {
-    if (window.scrollY >= 80) {
-      setNavScrolled(true);
-    } else {
-      setNavScrolled(false);
-    }
-  };
+  // const onNavScrolled = () => {
+  //   if (window.scrollY >= 80) {
+  //     setNavScrolled(true);
+  //   } else {
+  //     setNavScrolled(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", onNavScrolled);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", onNavScrolled);
+  // }, []);
 
-  const scrollToHome = () => {
-    animateScroll.scrollToTop();
-  };
-  const scrollProps = {
-    smooth: true,
-    duration: 500,
-    spy: true,
-    exact: "true",
-    offset: -80,
-  };
+  // const scrollToHome = () => {
+  //   animateScroll.scrollToTop();
+  // };
+  // const scrollProps = {
+  //   smooth: true,
+  //   duration: 500,
+  //   spy: true,
+  //   exact: "true",
+  //   offset: -80,
+  // };
   return (
     <React.Fragment>
-      <Nav navScrolled={navScrolled}>
+      <Nav>
         <NavBarContainer>
-          <NavLogo to="/" onClick={scrollToHome}>
+          <NavLogo
+            //to="/"
+            onClick={() => {
+              scroll(0);
+            }}
+          >
             Portfolio
           </NavLogo>
           <MobileIcon onClick={toggleIsOpen}>
@@ -50,30 +55,20 @@ const NavBar = ({ toggleIsOpen }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about_me" {...scrollProps}>
-                About Me
-              </NavLinks>
+              <NavLinks onClick={() => scroll(1)}>About Me</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="education" {...scrollProps}>
-                Education
-              </NavLinks>
+              <NavLinks onClick={() => scroll(2)}>Education</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="technologies" {...scrollProps}>
-                Technologies
-              </NavLinks>
+              <NavLinks onClick={() => scroll(3)}>Technologies</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="projects" {...scrollProps}>
-                Projects
-              </NavLinks>
+              <NavLinks onClick={() => scroll(4)}>Projects</NavLinks>
             </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to="footer" {...scrollProps}>
-              Contact Me
-            </NavBtnLink>
+            <NavBtnLink onClick={() => scroll(5)}>Contact Me</NavBtnLink>
           </NavBtn>
         </NavBarContainer>
       </Nav>

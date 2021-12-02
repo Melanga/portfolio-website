@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { aboutData } from "../components/Sections/AboutSection/Data";
 import { educationData } from "../components/Sections/EducationSection/Data";
 import { technologiesData } from "../components/Sections/TechnologiesSection/Data";
@@ -14,20 +14,27 @@ import Footer from "../components/Footer";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const parallax = useRef(null);
 
   //this handle toggling of nav side bar
   const toggleIsOpen = () => {
     setIsOpen(!isOpen);
   };
 
+  const scroll = (to) => {
+    if (parallax.current) {
+      parallax.current.scrollTo(to);
+    }
+  };
+
   return (
     <React.Fragment>
-      <Parallax pages={6} style={{ top: "0", left: "0" }}>
+      <Parallax pages={6} style={{ top: "0", left: "0" }} ref={parallax}>
         <ParallaxLayer offset={0} speed={0} sticky={{ start: 0, end: 5 }}>
           <SideNavBar toggleIsOpen={toggleIsOpen} isOpen={isOpen} />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0} sticky={{ start: 0, end: 5 }}>
-          <NavBar toggleIsOpen={toggleIsOpen} />
+          <NavBar toggleIsOpen={toggleIsOpen} scroll={scroll} />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0}>
           <HeroSection />
