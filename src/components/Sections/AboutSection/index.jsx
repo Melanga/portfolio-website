@@ -28,32 +28,33 @@ const AboutSection = ({
   img,
   alt,
 }) => {
-  const { ref, inView } = useInView({ threshold: 0.5 });
+  const { ref, inView } = useInView({ threshold: 0.4 });
 
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
     marginLeft: inView ? 0 : -400,
     config: config.gentle,
+    delay: 200,
   });
 
   const contentHeaderProps = useSpring({
     opacity: inView ? 1 : 0,
     marginLeft: inView ? 0 : -400,
     config: config.slow,
-    //delay: 200,
+    delay: 200,
   });
   const contentPProps = useSpring({
     opacity: inView ? 1 : 0,
     marginLeft: inView ? 0 : -400,
     config: config.slow,
-    delay: 200,
+    delay: 400,
   });
 
   const contentImgProps = useSpring({
     opacity: inView ? 1 : 0,
     //marginRight: inView ? 0 : -100,
     config: config.gentle,
-    delay: 300,
+    delay: 500,
   });
 
   return (
