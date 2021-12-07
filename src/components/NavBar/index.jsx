@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
+import { ParallaxLayer } from "@react-spring/parallax";
 import {
   Nav,
   NavBarContainer,
@@ -39,40 +40,38 @@ const NavBar = ({ toggleIsOpen, scroll }) => {
   //   offset: -80,
   // };
   return (
-    <React.Fragment>
-      <Nav>
-        <NavBarContainer>
-          <NavLogo
-            //to="/"
-            onClick={() => {
-              scroll(0);
-            }}
-          >
-            Portfolio
-          </NavLogo>
-          <MobileIcon onClick={toggleIsOpen}>
-            <FaBars />
-          </MobileIcon>
-          <NavMenu>
-            <NavItem>
-              <NavLinks onClick={() => scroll(1)}>About Me</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks onClick={() => scroll(2)}>Education</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks onClick={() => scroll(3)}>Technologies</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks onClick={() => scroll(4)}>Projects</NavLinks>
-            </NavItem>
-          </NavMenu>
-          <NavBtn>
-            <NavBtnLink onClick={() => scroll(5)}>Contact Me</NavBtnLink>
-          </NavBtn>
-        </NavBarContainer>
-      </Nav>
-    </React.Fragment>
+    <Nav>
+      <NavBarContainer>
+        <NavLogo
+          //to="/"
+          onClick={() => {
+            scroll(0);
+          }}
+        >
+          Portfolio
+        </NavLogo>
+        <MobileIcon onClick={toggleIsOpen}>
+          <FaBars />
+        </MobileIcon>
+        <NavMenu>
+          <NavItem>
+            <NavLinks onClick={() => scroll(1)}>About Me</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks onClick={() => scroll(2)}>Education</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks onClick={() => scroll(3)}>Technologies</NavLinks>
+          </NavItem>
+          <NavItem>
+            <NavLinks onClick={() => scroll(4)}>Projects</NavLinks>
+          </NavItem>
+        </NavMenu>
+        <NavBtn>
+          <NavBtnLink onClick={() => scroll(5)}>Contact Me</NavBtnLink>
+        </NavBtn>
+      </NavBarContainer>
+    </Nav>
   );
 };
 

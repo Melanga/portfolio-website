@@ -30,10 +30,17 @@ const Home = () => {
   return (
     <React.Fragment>
       <Parallax pages={6} style={{ top: "0", left: "0" }} ref={parallax}>
-        <ParallaxLayer offset={0} speed={0} sticky={{ start: 0, end: 5 }}>
+        <ParallaxLayer offset={0} speed={0}>
           <SideNavBar toggleIsOpen={toggleIsOpen} isOpen={isOpen} />
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={0} sticky={{ start: 0, end: 5 }}>
+        <ParallaxLayer
+          offset={0}
+          speed={0}
+          sticky={{ start: 0, end: 5 }}
+          style={{
+            height: 80,
+          }}
+        >
           <NavBar toggleIsOpen={toggleIsOpen} scroll={scroll} />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0}>
