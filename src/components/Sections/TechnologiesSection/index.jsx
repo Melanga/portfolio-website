@@ -1,6 +1,7 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
+import { ParallaxLayer } from "@react-spring/parallax";
 import {
   SectionContainer,
   SectionWrapper,
@@ -51,65 +52,76 @@ const TechnologiesSection = ({
     <React.Fragment>
       <SectionContainer lightBg={lightBg} id={id} ref={ref}>
         <SectionWrapper>
-          <SectionRow imgStart={imgStart}>
-            <Column1>
-              <TecTextWrapper>
-                <animated.div style={contentTextProps}>
-                  <TopLine>{topLine}</TopLine>
+          <ParallaxLayer
+            offset={1}
+            speed={0.5}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 4,
+            }}
+          >
+            <SectionRow imgStart={imgStart}>
+              <Column1>
+                <TecTextWrapper>
+                  <animated.div style={contentTextProps}>
+                    <TopLine>{topLine}</TopLine>
+                  </animated.div>
+                  <animated.div style={contentHeaderProps}>
+                    <Heading lightText={lightText}>{headLine}</Heading>
+                  </animated.div>
+                  <TechnologiesWrapper>
+                    <TechnologyComponent
+                      inView={inView}
+                      timeDelay={200}
+                      technology="Python"
+                    />
+                    <TechnologyComponent
+                      inView={inView}
+                      timeDelay={700}
+                      technology="C"
+                    />
+                    <TechnologyComponent
+                      inView={inView}
+                      timeDelay={900}
+                      technology="Java"
+                    />
+                    <TechnologyComponent
+                      inView={inView}
+                      timeDelay={500}
+                      technology="Java Script"
+                    />
+                    <TechnologyComponent
+                      inView={inView}
+                      timeDelay={900}
+                      technology="React"
+                    />
+                    <TechnologyComponent
+                      inView={inView}
+                      timeDelay={700}
+                      technology="Flutter"
+                    />
+                    <TechnologyComponent
+                      inView={inView}
+                      timeDelay={500}
+                      technology="TensorFlow"
+                    />
+                    <TechnologyComponent
+                      inView={inView}
+                      timeDelay={700}
+                      technology="ML"
+                    />
+                  </TechnologiesWrapper>
+                </TecTextWrapper>
+              </Column1>
+              <Column2>
+                <animated.div style={contentSvgGridProps}>
+                  <TechnologySvgGrid></TechnologySvgGrid>
                 </animated.div>
-                <animated.div style={contentHeaderProps}>
-                  <Heading lightText={lightText}>{headLine}</Heading>
-                </animated.div>
-                <TechnologiesWrapper>
-                  <TechnologyComponent
-                    inView={inView}
-                    timeDelay={200}
-                    technology="Python"
-                  />
-                  <TechnologyComponent
-                    inView={inView}
-                    timeDelay={700}
-                    technology="C"
-                  />
-                  <TechnologyComponent
-                    inView={inView}
-                    timeDelay={900}
-                    technology="Java"
-                  />
-                  <TechnologyComponent
-                    inView={inView}
-                    timeDelay={500}
-                    technology="Java Script"
-                  />
-                  <TechnologyComponent
-                    inView={inView}
-                    timeDelay={900}
-                    technology="React"
-                  />
-                  <TechnologyComponent
-                    inView={inView}
-                    timeDelay={700}
-                    technology="Flutter"
-                  />
-                  <TechnologyComponent
-                    inView={inView}
-                    timeDelay={500}
-                    technology="TensorFlow"
-                  />
-                  <TechnologyComponent
-                    inView={inView}
-                    timeDelay={700}
-                    technology="ML"
-                  />
-                </TechnologiesWrapper>
-              </TecTextWrapper>
-            </Column1>
-            <Column2>
-              <animated.div style={contentSvgGridProps}>
-                <TechnologySvgGrid></TechnologySvgGrid>
-              </animated.div>
-            </Column2>
-          </SectionRow>
+              </Column2>
+            </SectionRow>
+          </ParallaxLayer>
         </SectionWrapper>
       </SectionContainer>
     </React.Fragment>
