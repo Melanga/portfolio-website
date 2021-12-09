@@ -10,7 +10,14 @@ import tensorflowSvg from "../../../images/technologies/tensorflow.svg";
 import { ParallaxLayer } from "@react-spring/parallax";
 //import javaSvg from "../../../images/technologies/java.svg";
 
-const TechnologySvgGridWrapper = styled.div``;
+const TechnologySvgGridWrapper = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: auto auto auto;
+  }
+`;
 
 const TechnologySvgWrapper = styled.div`
   align-items: center;
@@ -25,7 +32,6 @@ const TechnologySvgWrapper = styled.div`
 const TechnologySvg = styled.img`
   width: 80px;
   height: 80px;
-  //margin: ${({ margin = 0 }) => margin};
   transition: all 0.4s ease-in-out;
   @media screen and (max-width: 1200px) {
     margin: 10px;
@@ -42,116 +48,144 @@ const TechnologySvg = styled.img`
   }
 `;
 
-const TechnologySvgGrid = () => {
-  return (
-    <TechnologySvgGridWrapper>
-      <TechnologySvgWrapper>
-        <ParallaxLayer
-          offset={1}
-          speed={0.37}
-          style={{
-            display: "block",
-            marginLeft: "47%",
-            marginTop: "0%",
-            width: 60,
-            height: 60,
-          }}
-        >
-          <TechnologySvg src={tensorflowSvg} margin="30px 0px 0px 20px" />
-        </ParallaxLayer>
-      </TechnologySvgWrapper>
-      <TechnologySvgWrapper>
-        <ParallaxLayer
-          offset={1}
-          speed={0.6}
-          style={{
-            display: "block",
-            marginLeft: "65%",
-            marginTop: "32%",
-            width: 60,
-            height: 60,
-          }}
-        >
-          <TechnologySvg src={firebaseSvg} margin="80px 0px 10px 40px" />
-        </ParallaxLayer>
-      </TechnologySvgWrapper>
-      <TechnologySvgWrapper>
-        <ParallaxLayer
-          offset={1}
-          speed={0.5}
-          style={{
-            display: "block",
-            marginLeft: "80%",
-            marginTop: "12%",
-            width: 60,
-            height: 60,
-          }}
-        >
-          <TechnologySvg src={flutterSvg} margin="10px 10px 0px 20px" />
-        </ParallaxLayer>
-      </TechnologySvgWrapper>
-      <TechnologySvgWrapper>
-        <ParallaxLayer
-          offset={1}
-          speed={0.4}
-          style={{
-            display: "block",
-            marginLeft: "76%",
-            marginTop: "20%",
-            width: 60,
-            height: 60,
-          }}
-        >
-          <TechnologySvg src={reactSvg} margin="150px 10px 0px 20px" />
-        </ParallaxLayer>
-      </TechnologySvgWrapper>
-      <TechnologySvgWrapper>
-        <ParallaxLayer
-          offset={1}
-          speed={0.4}
-          style={{
-            display: "block",
-            marginLeft: "44%",
-            marginTop: "27%",
-            width: 60,
-            height: 60,
-          }}
-        >
-          <TechnologySvg src={javascriptSvg} margin="0px 10px 0px 50px" />
-        </ParallaxLayer>
-      </TechnologySvgWrapper>
-      <TechnologySvgWrapper>
-        <ParallaxLayer
-          offset={1}
-          speed={0.6}
-          style={{
-            display: "block",
-            marginLeft: "55%",
-            marginTop: "40%",
-            width: 60,
-            height: 60,
-          }}
-        >
-          <TechnologySvg src={pythonSvg} margin="60px 10px 0px 30px" />
-        </ParallaxLayer>
-      </TechnologySvgWrapper>
-      <TechnologySvgWrapper>
-        <ParallaxLayer
-          offset={1}
-          speed={0.5}
-          style={{
-            display: "block",
-            marginLeft: "65%",
-            marginTop: "40%",
-            width: 60,
-            height: 60,
-          }}
-        >
-          <TechnologySvg src={cSvg} margin="10px 0px 0px 40px" />
-        </ParallaxLayer>
-      </TechnologySvgWrapper>
-    </TechnologySvgGridWrapper>
-  );
+const TechnologySvgGrid = ({ width }) => {
+  if (width > 768) {
+    return (
+      <div>
+        <TechnologySvgWrapper>
+          <ParallaxLayer
+            offset={1}
+            speed={0.37}
+            style={{
+              display: "block",
+              marginLeft: "47%",
+              marginTop: "0%",
+              width: 60,
+              height: 60,
+            }}
+          >
+            <TechnologySvg src={tensorflowSvg} />
+          </ParallaxLayer>
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <ParallaxLayer
+            offset={1}
+            speed={0.6}
+            style={{
+              display: "block",
+              marginLeft: "65%",
+              marginTop: "32%",
+              width: 60,
+              height: 60,
+            }}
+          >
+            <TechnologySvg src={firebaseSvg} />
+          </ParallaxLayer>
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <ParallaxLayer
+            offset={1}
+            speed={0.5}
+            style={{
+              display: "block",
+              marginLeft: "80%",
+              marginTop: "12%",
+              width: 60,
+              height: 60,
+            }}
+          >
+            <TechnologySvg src={flutterSvg} />
+          </ParallaxLayer>
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <ParallaxLayer
+            offset={1}
+            speed={0.4}
+            style={{
+              display: "block",
+              marginLeft: "76%",
+              marginTop: "20%",
+              width: 60,
+              height: 60,
+            }}
+          >
+            <TechnologySvg src={reactSvg} />
+          </ParallaxLayer>
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <ParallaxLayer
+            offset={1}
+            speed={0.4}
+            style={{
+              display: "block",
+              marginLeft: "44%",
+              marginTop: "27%",
+              width: 60,
+              height: 60,
+            }}
+          >
+            <TechnologySvg src={javascriptSvg} />
+          </ParallaxLayer>
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <ParallaxLayer
+            offset={1}
+            speed={0.6}
+            style={{
+              display: "block",
+              marginLeft: "55%",
+              marginTop: "40%",
+              width: 60,
+              height: 60,
+            }}
+          >
+            <TechnologySvg src={pythonSvg} />
+          </ParallaxLayer>
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <ParallaxLayer
+            offset={1}
+            speed={0.5}
+            style={{
+              display: "block",
+              marginLeft: "65%",
+              marginTop: "40%",
+              width: 60,
+              height: 60,
+            }}
+          >
+            <TechnologySvg src={cSvg} />
+          </ParallaxLayer>
+        </TechnologySvgWrapper>
+      </div>
+    );
+  } else {
+    return (
+      <TechnologySvgGridWrapper>
+        <TechnologySvgWrapper>
+          <TechnologySvg src={tensorflowSvg} />
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <TechnologySvg src={firebaseSvg} />
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <TechnologySvg src={flutterSvg} />
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <TechnologySvg src={reactSvg} />
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <TechnologySvg src={javascriptSvg} />
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <TechnologySvg src={pythonSvg} />
+        </TechnologySvgWrapper>
+        <TechnologySvgWrapper>
+          <TechnologySvg src={cSvg} />
+        </TechnologySvgWrapper>
+      </TechnologySvgGridWrapper>
+    );
+  }
 };
 
 export default TechnologySvgGrid;

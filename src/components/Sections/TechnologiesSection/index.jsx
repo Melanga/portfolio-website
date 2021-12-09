@@ -25,6 +25,7 @@ const TechnologiesSection = ({
   topLine,
   lightText,
   headLine,
+  width,
 }) => {
   const { ref, inView } = useInView({ threshold: 0.3 });
 
@@ -117,7 +118,7 @@ const TechnologiesSection = ({
               </Column1>
               <Column2>
                 <animated.div style={contentSvgGridProps}>
-                  <TechnologySvgGrid></TechnologySvgGrid>
+                  <TechnologySvgGrid width={width}></TechnologySvgGrid>
                 </animated.div>
               </Column2>
             </SectionRow>

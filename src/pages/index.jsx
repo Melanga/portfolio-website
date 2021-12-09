@@ -11,9 +11,11 @@ import SideNavBar from "../components/SideNavBar";
 import TechnologiesSection from "../components/Sections/TechnologiesSection";
 import ProjectsSection from "../components/Sections/ProjectsSection";
 import Footer from "../components/Footer";
+import useViewport from "../components/Hook/ViewPort";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { width } = useViewport();
   const parallax = useRef(null);
 
   //this handle toggling of nav side bar
@@ -53,7 +55,7 @@ const Home = () => {
           <EducationSection {...educationData} />
         </ParallaxLayer>
         <ParallaxLayer offset={3} speed={0}>
-          <TechnologiesSection {...technologiesData} />
+          <TechnologiesSection {...technologiesData} width={width} />
         </ParallaxLayer>
         <ParallaxLayer offset={4} speed={0}>
           <ProjectsSection />
