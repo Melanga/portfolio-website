@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
+import { ParallaxLayer } from "@react-spring/parallax";
 import useViewport from "../../Hook/ViewPort";
 import ProjectCard from "./projectCard";
 import { projectData1, projectData2, projectData3 } from "./ProjectsData";
@@ -51,20 +52,40 @@ const ProjectsSection = () => {
 
   return (
     <ProjectsContainer id="projects" ref={ref}>
-      <animated.div style={contentTextProps}>
-        <ProjectsTitle>My Projects</ProjectsTitle>
-      </animated.div>
-      <ProjectsWrapper>
-        <animated.div style={contentLeftCardProps}>
-          <ProjectCard {...projectData1} trigger={enableHoverAnimation} />
+      <ParallaxLayer
+        offset={0}
+        speed={0}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "10%",
+        }}
+      >
+        <animated.div style={contentTextProps}>
+          <ProjectsTitle>My Projects</ProjectsTitle>
         </animated.div>
-        <animated.div style={contentMiddleCardProps}>
-          <ProjectCard {...projectData2} trigger={enableHoverAnimation} />
-        </animated.div>
-        <animated.div style={contentRightCardProps}>
-          <ProjectCard {...projectData3} trigger={enableHoverAnimation} />
-        </animated.div>
-      </ProjectsWrapper>
+      </ParallaxLayer>
+      <ParallaxLayer
+        offset={2.1}
+        speed={1}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <ProjectsWrapper>
+          <animated.div style={contentLeftCardProps}>
+            <ProjectCard {...projectData1} trigger={enableHoverAnimation} />
+          </animated.div>
+          <animated.div style={contentMiddleCardProps}>
+            <ProjectCard {...projectData2} trigger={enableHoverAnimation} />
+          </animated.div>
+          <animated.div style={contentRightCardProps}>
+            <ProjectCard {...projectData3} trigger={enableHoverAnimation} />
+          </animated.div>
+        </ProjectsWrapper>
+      </ParallaxLayer>
     </ProjectsContainer>
   );
 };
