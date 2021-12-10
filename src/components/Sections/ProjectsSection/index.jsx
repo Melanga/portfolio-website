@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import { ParallaxLayer } from "@react-spring/parallax";
-import useViewport from "../../Hook/ViewPort";
 import ProjectCard from "./projectCard";
 import { projectData1, projectData2, projectData3 } from "./ProjectsData";
 
@@ -12,12 +11,12 @@ import {
   ProjectsWrapper,
 } from "./ProjectsSectionElements";
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ width }) => {
   const [enableHoverAnimation, setEnableHoverAnimation] = useState(true);
-  const { width } = useViewport();
   let laptopWidth = width > 1200;
+  let thresholdValue = width > 768 ? 0.3 : 0;
 
-  const { ref, inView } = useInView({ threshold: 0.3 });
+  const { ref, inView } = useInView({ threshold: thresholdValue });
 
   useEffect(() => {
     setEnableHoverAnimation(laptopWidth);
