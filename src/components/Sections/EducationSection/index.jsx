@@ -67,8 +67,8 @@ const EducationSection = ({
       <SectionContainer ref={ref} lightBg={lightBg} id={id}>
         <SectionWrapper>
           <ParallaxLayer
-            offset={0.99}
-            speed={0.45}
+            offset={width > 768 ? 0.99 : 0.2}
+            speed={width > 768 ? 0.45 : 0.1}
             style={{
               display: "flex",
               justifyContent: "center",
