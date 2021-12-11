@@ -30,7 +30,8 @@ const EducationSection = ({
   alt,
   width,
 }) => {
-  const { ref, inView } = useInView({ threshold: 0.4 });
+  //let thresholdValue = width > 768 ? 0.4 : 0;
+  const { ref, inView } = useInView({ threshold: width > 768 ? 0.4 : 0 });
   let laptopWidth = width > 1200;
 
   const contentImgProps = useSpring({
