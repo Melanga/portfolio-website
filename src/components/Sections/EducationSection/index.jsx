@@ -2,7 +2,6 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSpring, animated, config } from "react-spring";
 import { ParallaxLayer } from "@react-spring/parallax";
-import useViewport from "../../Hook/ViewPort";
 import {
   SectionContainer,
   SectionWrapper,
@@ -29,10 +28,9 @@ const EducationSection = ({
   headLine,
   img,
   alt,
+  width,
 }) => {
   const { ref, inView } = useInView({ threshold: 0.4 });
-
-  const { width } = useViewport();
   let laptopWidth = width > 1200;
 
   const contentImgProps = useSpring({
