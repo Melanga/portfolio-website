@@ -49,7 +49,7 @@ const Home = () => {
           <HeroSection />
         </ParallaxLayer>
         <ParallaxLayer offset={1} speed={0}>
-          <AboutSection {...aboutData} />
+          <AboutSection {...aboutData} width={width} />
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={0}>
           <EducationSection {...educationData} width={width} />

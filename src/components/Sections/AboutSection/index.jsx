@@ -27,6 +27,7 @@ const AboutSection = ({
   description,
   img,
   alt,
+  width,
 }) => {
   const { ref, inView } = useInView({ threshold: 0.4 });
 
