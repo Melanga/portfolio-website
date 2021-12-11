@@ -29,7 +29,7 @@ const AboutSection = ({
   alt,
   width,
 }) => {
-  const { ref, inView } = useInView({ threshold: 0.4 });
+  const { ref, inView } = useInView({ threshold: width > 768 ? 0.4 : 0.1 });
 
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
@@ -62,8 +62,8 @@ const AboutSection = ({
     <SectionContainer ref={ref} lightBg={lightBg} id={id}>
       <SectionWrapper>
         <ParallaxLayer
-          offset={0.5}
-          speed={0.5}
+          offset={width > 768 ? 0.5 : 0.1}
+          speed={width > 768 ? 0.5 : 0.1}
           style={{
             display: "flex",
             justifyContent: "center",
