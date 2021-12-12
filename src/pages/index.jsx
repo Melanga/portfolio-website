@@ -16,6 +16,7 @@ import useViewport from "../components/Hook/ViewPort";
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { width } = useViewport();
+  let mobileView = width < 768;
   const parallax = useRef(null);
 
   //this handle toggling of nav side bar
@@ -49,16 +50,16 @@ const Home = () => {
           <HeroSection />
         </ParallaxLayer>
         <ParallaxLayer offset={1} speed={0}>
-          <AboutSection {...aboutData} width={width} />
+          <AboutSection {...aboutData} mobileView={mobileView} />
         </ParallaxLayer>
         <ParallaxLayer offset={2} speed={0}>
-          <EducationSection {...educationData} width={width} />
+          <EducationSection {...educationData} mobileView={mobileView} />
         </ParallaxLayer>
         <ParallaxLayer offset={3} speed={0}>
-          <TechnologiesSection {...technologiesData} width={width} />
+          <TechnologiesSection {...technologiesData} mobileView={mobileView} />
         </ParallaxLayer>
         <ParallaxLayer offset={4} speed={0}>
-          <ProjectsSection width={width} />
+          <ProjectsSection width={width} mobileView={mobileView} />
         </ParallaxLayer>
         <ParallaxLayer offset={5} speed={0}>
           <Footer />

@@ -18,6 +18,7 @@ import {
   EducationTextWrapper,
 } from "./EducationSectionElements";
 import EducationTimeline from "./EducationTimeline";
+import useViewport from "../../Hook/ViewPort";
 
 const EducationSection = ({
   id,
@@ -28,10 +29,11 @@ const EducationSection = ({
   headLine,
   img,
   alt,
-  width,
+  mobileView,
 }) => {
   //let thresholdValue = width > 768 ? 0.4 : 0;
-  const { ref, inView } = useInView({ threshold: width > 768 ? 0.4 : 0 });
+  const { ref, inView } = useInView({ threshold: mobileView ? 0 : 0.4 });
+  const { width } = useViewport();
   let laptopWidth = width > 1200;
 
   const contentImgProps = useSpring({
@@ -67,8 +69,8 @@ const EducationSection = ({
       <SectionContainer ref={ref} lightBg={lightBg} id={id}>
         <SectionWrapper>
           <ParallaxLayer
-            offset={width > 768 ? 0.99 : 0.2}
-            speed={width > 768 ? 0.45 : 0.1}
+            offset={mobileView ? 0.2 : 0.99}
+            speed={mobileView ? 0.1 : 0.45}
             style={{
               display: "flex",
               justifyContent: "center",

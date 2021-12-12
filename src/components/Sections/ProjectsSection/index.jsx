@@ -11,16 +11,15 @@ import {
   ProjectsWrapper,
 } from "./ProjectsSectionElements";
 
-const ProjectsSection = ({ width }) => {
+const ProjectsSection = ({ width, mobileView }) => {
   const [enableHoverAnimation, setEnableHoverAnimation] = useState(true);
-  let laptopWidth = width > 1200;
-  let thresholdValue = width > 768 ? 0.3 : 0;
+  let laptopView = width > 1200;
 
-  const { ref, inView } = useInView({ threshold: thresholdValue });
+  const { ref, inView } = useInView({ threshold: mobileView ? 0 : 0.3 });
 
   useEffect(() => {
-    setEnableHoverAnimation(laptopWidth);
-  }, [laptopWidth]);
+    setEnableHoverAnimation(laptopView);
+  }, [laptopView]);
 
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,

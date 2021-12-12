@@ -27,9 +27,10 @@ const AboutSection = ({
   description,
   img,
   alt,
-  width,
+  mobileView,
 }) => {
-  const { ref, inView } = useInView({ threshold: width > 768 ? 0.4 : 0.1 });
+  //TODO: auto refresh dome after the change of mobileView
+  const { ref, inView } = useInView({ threshold: mobileView ? 0.1 : 0.4 });
 
   const contentTextProps = useSpring({
     opacity: inView ? 1 : 0,
@@ -62,8 +63,8 @@ const AboutSection = ({
     <SectionContainer ref={ref} lightBg={lightBg} id={id}>
       <SectionWrapper>
         <ParallaxLayer
-          offset={width > 768 ? 0.5 : 0.1}
-          speed={width > 768 ? 0.5 : 0.1}
+          offset={mobileView ? 0.1 : 0.5}
+          speed={mobileView ? 0.1 : 0.5}
           style={{
             display: "flex",
             justifyContent: "center",
