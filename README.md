@@ -6,8 +6,8 @@ custom react hook is used to make the website responsive using the width of the 
 
 ## npm packages
 
-react-icons
-react-scroll
-react-spring
-react-spring-parallax
-styled-components
+- react-icons
+- react-scroll
+- react-spring
+- react-spring-parallax
+- styled-components
